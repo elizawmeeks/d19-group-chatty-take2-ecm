@@ -27,7 +27,7 @@ var Chatty = (function (oldChatty) {
         newMessage.addEventListener("keypress", function(event) {
             if (event.keyCode === 13) {
                 Chatty.addMessages(newMessage.value);
-                Chatty.navClear();
+                Chatty.writeToDom();
             }
 
         });
@@ -54,20 +54,20 @@ var Chatty = (function (oldChatty) {
 
     }
     // DELETE MESSAGE BUTTON FUNCTION
-    // oldChatty.deleteButton = function () {
-    //     var messageDeleteButtons = document.getElementsByClassName('delete');
-    //     for (var i = 0; i < messageDeleteButtons.length; i++) {
-    //         messageDeleteButtons.item(i).addEventListener("click", function(event) {
-    //             var deleteMessage = event.target.closest("p");
-    //             console.log("deleteMessage", event);
-    //            // Chatty.deleteMessages();
-    //             Chatty.writeToDom();
-    //         });
+    oldChatty.deleteButton = function () {
+        var messageDeleteButtons = document.getElementsByClassName('delete');
+        for (var i = 0; i < messageDeleteButtons.length; i++) {
+            messageDeleteButtons.item(i).addEventListener("click", function(event) {
+                var deleteMessage = event.target.closest("div").querySelector("<p>");
+                console.log("deleteMessage", deleteMessage);
 
 
-    //     }[]
+            });
 
-    // }
+
+        }[]
+
+    }
 
     return oldChatty
 })(Chatty || {});
