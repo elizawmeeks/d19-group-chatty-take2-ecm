@@ -27,7 +27,7 @@ var Chatty = (function (oldChatty) {
         newMessage.addEventListener("keypress", function(event) {
             if (event.keyCode === 13) {
                 Chatty.addMessages(newMessage.value);
-                Chatty.writeToDom();
+                Chatty.writeToDom ();
             }
 
         });
