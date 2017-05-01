@@ -3,7 +3,6 @@ console.log("iifeopt");
 var Chatty = (function (oldChatty) {
     // GATHERING EVENT LISTENERS
     var newMessage = document.getElementById('message-input');
-    var clearLogButton = document.getElementById('clear-log');
     var themeSelect = document.getElementById('theme-select');
     var textSizeSelect = document.getElementById('text-size-select');
 
@@ -11,13 +10,16 @@ var Chatty = (function (oldChatty) {
     oldChatty.navClear = function () {
         // GETTING MESSAGEARRAY LENGTH
         var messageArray = Chatty.getMessages();
+        console.log(messageArray);
         newMessage.value = null;
         var selects = document.getElementsByTagName('option');
         for (let i = 0; i < selects.length; i++) {
             selects[i].selected = false;
         }
-        for (var j = 0; j < messageArray.length;j++) {
-            Chatty.deleteMessages(j);
+
+        for (var j = 0; j < messageArray.length; j++) {
+            console.log(messageArray[j]);
+            Chatty.deleteAllMessages();
         }
         Chatty.writeToDom();
     }
