@@ -1,5 +1,5 @@
 "use strict"
-
+console.log("iifeopt");
 var Chatty = (function (oldChatty) {
     // GATHERING EVENT LISTENERS
     var newMessage = document.getElementById('message-input');
@@ -16,24 +16,51 @@ var Chatty = (function (oldChatty) {
         for (let i = 0; i < selects.length; i++) {
             selects[i].selected = false;
         }
-        for (let j = 0; i < messageArray.length) {
+        for (var j = 0; j < messageArray.length;j++) {
             Chatty.deleteMessages(j);
         }
-        Chatty.writeToDom(placeholder);
+        Chatty.writeToDom();
     }
 
     // ENTER KYPRESS FUNCTION
     oldChatty.enterKeyPress = function () {
-        newMessage.addEventListener("keypress", function() {
+        newMessage.addEventListener("keypress", function(event) {
+            if (event.keyCode === 13) {
+                Chatty.addMessages(newMessage.value);
+                Chatty.navClear();
+            }
 
         });
     }
     // SELECT THEME FUNCTION
     oldChatty.selectTheme = function () {
+        var themes = document.getElementsByName('theme-select');
+        for (let i = 0; i < themes.length; i++) {
+            if (themes[i].value === b) {
+                // adding/removing class
+            }else if(true) {
+                // adding/removing class
+            }
+        }
+        var sizes = document.getElementsByName('text-size-select');
+        for (let i = 0; i < sizes.length; i++) {
+            if (sizes[i].value === b) {
+                // adding/removing class
+            }else if(true) {
+                // adding/removing class
+            }
+        }
+
 
     }
     // DELETE MESSAGE BUTTON FUNCTION
     oldChatty.deleteButton = function () {
+        var messageDeleteButtons =document.getElementsByClassName('');
+        for (let i = 0; i < messageDeleteButtons.length; i++) {
+            messageDeleteButtons[i].addEventListener("click", function(event) {
+                this.parentNode.remove();
+            });
+        }
 
     }
 
