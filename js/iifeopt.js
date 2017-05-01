@@ -54,15 +54,20 @@ var Chatty = (function (oldChatty) {
 
     }
     // DELETE MESSAGE BUTTON FUNCTION
-    oldChatty.deleteButton = function () {
-        var messageDeleteButtons =document.getElementsByClassName('');
-        for (let i = 0; i < messageDeleteButtons.length; i++) {
-            messageDeleteButtons[i].addEventListener("click", function(event) {
-                this.parentNode.remove();
-            });
-        }
+    // oldChatty.deleteButton = function () {
+    //     var messageDeleteButtons = document.getElementsByClassName('delete');
+    //     for (var i = 0; i < messageDeleteButtons.length; i++) {
+    //         messageDeleteButtons.item(i).addEventListener("click", function(event) {
+    //             var deleteMessage = event.target.closest("p");
+    //             console.log("deleteMessage", event);
+    //            // Chatty.deleteMessages();
+    //             Chatty.writeToDom();
+    //         });
 
-    }
+
+    //     }[]
+
+    // }
 
     return oldChatty
 })(Chatty || {});
