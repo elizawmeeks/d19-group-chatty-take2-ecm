@@ -21,6 +21,14 @@ var Chatty = (function(chatapp){
         return messagesArray;
     };
 
+    chatapp.addMessages = function(message){
+        messagesArray.push(message);
+    }
+
     return chatapp;
 
 })(Chatty || {});
+
+
+
+
