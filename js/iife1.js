@@ -12,7 +12,9 @@ var Chatty = (function(chatapp){
         loadMessages.addEventListener("load", function(event){
         messagesArray = JSON.parse(event.target.responseText).messages;
         console.log("messagesArray", messagesArray);
+        Chatty.enterKeyPress();
         Chatty.writeToDom();
+
         });
     }
 
