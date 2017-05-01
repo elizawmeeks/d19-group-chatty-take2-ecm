@@ -4,7 +4,7 @@ var Chatty = (function(chatapp){
 	chatapp.writeToDom = function(){
 		var messages = Chatty.getMessages();
 		for (var i = 0; i < messages.length; i++){
-			write.innerHTML += `${messages[i]}<br>`;	
+			write.innerHTML += `${messages[i]}<button>Delete</button><br>`;	
 		}
 	}
 
