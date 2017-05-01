@@ -15,6 +15,12 @@ var Chatty = (function(chatapp){
         });
     }
 
+
+    //To get array - run Chatty.getMessages();
+    chatapp.getMessages = function(){
+        return messagesArray;
+    };
+
     return chatapp;
 
 })(Chatty || {});
