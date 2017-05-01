@@ -58,8 +58,9 @@ var Chatty = (function (oldChatty) {
         var messageDeleteButtons = document.getElementsByClassName('delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
             messageDeleteButtons.item(i).addEventListener("click", function(event) {
-                var deleteMessage = event.target.closest("div").querySelector("<p>");
+                var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
                 console.log("deleteMessage", deleteMessage);
+                Chatty.deleteMessages(deleteMessage);
 
 
             });
