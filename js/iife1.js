@@ -11,7 +11,8 @@ var Chatty = (function(chatapp){
         loadMessages.send();
         loadMessages.addEventListener("load", function(event){
         messagesArray = JSON.parse(event.target.responseText).messages;
-        console.log("messagesArray", messagesArray)
+        console.log("messagesArray", messagesArray);
+        Chatty.writeToDom();
         });
     }
 
@@ -23,6 +24,10 @@ var Chatty = (function(chatapp){
 
     chatapp.addMessages = function(message){
         messagesArray.push(message);
+    }
+
+    chatapp.deleteMessages = function(index){
+        messagesArray.splice(index, 1);
     }
 
     return chatapp;
