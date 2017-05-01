@@ -1,5 +1,5 @@
 "use strict"
-
+console.log("iifeopt");
 var Chatty = (function (oldChatty) {
     // GATHERING EVENT LISTENERS
     var newMessage = document.getElementById('message-input');
@@ -16,7 +16,7 @@ var Chatty = (function (oldChatty) {
         for (let i = 0; i < selects.length; i++) {
             selects[i].selected = false;
         }
-        for (let j = 0; i < messageArray.length) {
+        for (var j = 0; j < messageArray.length;j++) {
             Chatty.deleteMessages(j);
         }
         Chatty.writeToDom();
@@ -25,7 +25,7 @@ var Chatty = (function (oldChatty) {
     // ENTER KYPRESS FUNCTION
     oldChatty.enterKeyPress = function () {
         newMessage.addEventListener("keypress", function(event) {
-            if (keycode === 13) {
+            if (event.keyCode === 13) {
                 Chatty.addMessages(newMessage.value);
                 Chatty.navClear();
             }
@@ -38,7 +38,7 @@ var Chatty = (function (oldChatty) {
         for (let i = 0; i < themes.length; i++) {
             if (themes[i].value === b) {
                 // adding/removing class
-            }else if {
+            }else if(true) {
                 // adding/removing class
             }
         }
@@ -46,7 +46,7 @@ var Chatty = (function (oldChatty) {
         for (let i = 0; i < sizes.length; i++) {
             if (sizes[i].value === b) {
                 // adding/removing class
-            }else if {
+            }else if(true) {
                 // adding/removing class
             }
         }
