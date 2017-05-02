@@ -13,7 +13,8 @@ var Chatty = (function(chatapp){
         messagesArray = JSON.parse(event.target.responseText).messages;
         console.log("messagesArray", messagesArray);
         Chatty.enterKeyPress();
-        Chatty.writeToDom();
+        Chatty.writeToDom()
+        Chatty.defaultListeners();
         });
     }
 
