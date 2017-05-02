@@ -3,7 +3,6 @@ console.log("iifeopt");
 var Chatty = (function (oldChatty) {
     // GATHERING EVENT LISTENERS
     var newMessage = document.getElementById('message-input');
-    var clearLogButton = document.getElementById('clear-log');
     var themeSelect = document.getElementById('theme-select');
     var textSizeSelect = document.getElementById('text-size-select');
 
@@ -11,13 +10,16 @@ var Chatty = (function (oldChatty) {
     oldChatty.navClear = function () {
         // GETTING MESSAGEARRAY LENGTH
         var messageArray = Chatty.getMessages();
+        console.log(messageArray);
         newMessage.value = null;
         var selects = document.getElementsByTagName('option');
         for (let i = 0; i < selects.length; i++) {
             selects[i].selected = false;
         }
-        for (var j = 0; j < messageArray.length;j++) {
-            Chatty.deleteMessages(j);
+
+        for (var j = 0; j < messageArray.length; j++) {
+            console.log(messageArray[j]);
+            Chatty.deleteAllMessages();
         }
         Chatty.writeToDom();
     }
@@ -68,15 +70,11 @@ var Chatty = (function (oldChatty) {
         var messageDeleteButtons = document.getElementsByClassName('delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
             messageDeleteButtons.item(i).addEventListener("click", function(event) {
-                var deleteMessage = event.target.closest("p");
-                console.log("deleteMessage", event);
-               // Chatty.deleteMessages();
-                Chatty.writeToDom();
+                var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
+                console.log("deleteMessage", deleteMessage);
+                Chatty.deleteMessages(deleteMessage);
             });
-
-
         }
-
     }
 
     return oldChatty
