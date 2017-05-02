@@ -100,6 +100,7 @@ var Chatty = (function (oldChatty) {
                 editButton.addEventListener("click", function(event){
                     Chatty.editMessages(originalMessage, inputBox.value);
                     editButton.classList.add("hidden");
+                    inputBox.value = null;
                 })
             });
         }

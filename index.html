@@ -9,6 +9,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
 </head>
 <body>
 
@@ -17,15 +18,14 @@
         <a href="#" class="brand-logo"><img class="logo" src="img/cat.svg"> <img class="logo" src="img/happy-emoticon-with-one-tooth.svg"> <img class="logo" src="img/trophy-cup-silhouette.svg"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li id="chatLogClick">Katchatstrophe</li>
-          <li id="optionsClick">Options</li>
+          <li id="optionsClick"><i class="large material-icons">settings</i></li>
         </ul>
       </div>
     </nav>
     
-    <main> <!-- wrapper -->
+    <main class=""> <!-- wrapper -->
       <div id="chatLogView" class="row">
         <div class="col s10 offset-s1">
-          <p>Chat Log</p>
           <div id="chat-log"> <!-- Dom Target  -->
               <div id="write">
               </div>
@@ -77,8 +77,8 @@
           <label for="message-input">Type your message</label>
         </div>
         <div class="col s3 valign-wrapper">
-          <button type="button" id="clear-log">Clear</button>
-          <button type="button" id="edit-btn" class="hidden">Edit Message</button>
+          <a id="clear-log" class="waves-effect waves-light btn teal lighten-3">Clear</a>
+          <a id="edit-btn" class="hidden waves-effect waves-light btn teal lighten-3">Edit Message</a>
         </div>
       </div>
     </footer>  
