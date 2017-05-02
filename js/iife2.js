@@ -40,6 +40,12 @@ var Chatty = (function(chatapp){
 
 	}
 
+	chatapp.scrollBottom = function(){
+		var chatLog = document.getElementById("chat-log");
+		console.log("chatLog", chatLog);
+		chatLog.scrollTop = chatLog.scrollHeight;
+	}
+
 	return chatapp;
 
 })(Chatty || {});
