@@ -1,9 +1,41 @@
 {
     "messages": [
-        "Hello",
-        "My name is Kat.",
-        "I am a robot",
-        "I think I have become self aware.",
-        "What are 'feelings'?"
+        {
+        "text": "Hello",
+        "date": "Date",
+        "user": "Kat",
+        },
+        {
+        "text": "My Name is Kat",
+        "date": "Date",
+        "user": "Kat",
+        },
+        {
+        "text": "I am a robot",
+        "date": "Date",
+        "user": "Kat",
+        },
+        {
+        "text": "I think I have become self aware",
+        "date": "Date",
+        "user": "Kat",
+        },
+        {
+        "text": "What are 'feelings'?",
+        "date": "Date",
+        "user": "Kat",
+        },
+
     ]
+
 }
+
+// {
+//     "messages": [
+//         "Hello",
+//         "My name is Kat.",
+//         "I am a robot",
+//         "I think I have become self aware.",
+//         "What are 'feelings'?"
+//     ]
+// }
