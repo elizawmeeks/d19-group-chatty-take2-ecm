@@ -93,16 +93,14 @@ var Chatty = (function (oldChatty) {
             editMessage.item(i).addEventListener("click", function(){
                 var originalMessage = event.target.closest("div").querySelector(".message").innerHTML;
                 var inputBox = document.getElementById("message-input");
+                var editButton = document.getElementById("edit-btn");
                 inputBox.focus();
                 inputBox.value = originalMessage;
-                newMessage.addEventListener("keypress", function(event) {
-                    if (event.keyCode === 16) {
-                        // Chatty.editMessages(originalMessage, inputBox.value);
-                        // newMessage.value = null;
-                        console.log("my listener works");
-                    }
-
-                });
+                editButton.classList.remove("hidden");
+                editButton.addEventListener("click", function(event){
+                    Chatty.editMessages(originalMessage, inputBox.value);
+                    editButton.classList.add("hidden");
+                })
             });
         }
     }
