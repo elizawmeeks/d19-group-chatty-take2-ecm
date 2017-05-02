@@ -6,6 +6,7 @@ var Chatty = (function(chatapp){
     var messagesArray = [];
     var newJSON = [];
     var datesArray = [];
+    var usersArray = [];
 
     chatapp.xhrfunction = function (){
         var loadMessages = new XMLHttpRequest();
@@ -16,6 +17,7 @@ var Chatty = (function(chatapp){
         for (var i=0; i<newJSON.length;i++){
             messagesArray.push(newJSON[i].text);
             datesArray.push(Chatty.setDate());
+            usersArray.push(newJSON[i].user);
         }
         Chatty.enterKeyPress();
         Chatty.writeToDom()
@@ -33,8 +35,13 @@ var Chatty = (function(chatapp){
         return datesArray;
     }
 
-    chatapp.addMessages = function(message){
+    chatapp.getUsers = function() {
+        return usersArray;
+    }
+
+    chatapp.addMessages = function(message, user){
         messagesArray.push(message);
+        usersArray.push(user);
         datesArray.push(Chatty.setDate())
         chatapp.messageLimit();
 
@@ -44,13 +51,16 @@ var Chatty = (function(chatapp){
     chatapp.deleteAllMessages = function() {
         messagesArray = [];
         datesArray = [];
+        usersArray = [];
     }
 
-    chatapp.deleteMessages = function(message, date){
+    chatapp.deleteMessages = function(message, date, user){
         var indexMessage = messagesArray.indexOf(message);
         var indexDate = datesArray.indexOf(date);
+        var indexUser = usersArray.indexOf(user);
         messagesArray.splice(indexMessage, 1);
         datesArray.splice(indexDate,1);
+        usersArray.splice(indexUser, 1);
         console.log("messagesArray after splice", messagesArray);
         Chatty.writeToDom();
     }

@@ -5,11 +5,13 @@ var Chatty = (function(chatapp){
 	chatapp.writeToDom = function(){
 		var messages = Chatty.getMessages();
 		var dates = Chatty.getDate();
+		var users = Chatty.getUsers();
         write.innerHTML = "";
 		for (var i = 0; i < messages.length; i++){
 			write.innerHTML +=
 			`<div>
 			<p class="message">${messages[i]}</p>
+			<p class="user">-${users[i]}</p>
 			<p class="date">${dates[i]}</p>
 			<button class="delete">Delete</button>
 			</div>`;
@@ -24,7 +26,7 @@ var Chatty = (function(chatapp){
 		var messages = Chatty.getMessages();
 		console.log("messages", messages);
 		switch (true){
-			case (messages.length > 20): 
+			case (messages.length > 20):
 				console.log("There are more than 20 messages");
 				var msgToDelete = messages[0];
 				Chatty.deleteMessages(msgToDelete);
