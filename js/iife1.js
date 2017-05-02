@@ -5,7 +5,7 @@ var Chatty = (function(chatapp){
 
     var messagesArray = [];
     var newJSON = [];
-    var dates = [];
+    var datesArray = [];
 
     chatapp.xhrfunction = function (){
         var loadMessages = new XMLHttpRequest();
@@ -15,9 +15,8 @@ var Chatty = (function(chatapp){
         newJSON = JSON.parse(event.target.responseText).messages;
         for (var i=0; i<newJSON.length;i++){
             messagesArray.push(newJSON[i].text);
-            dates.push(newJSON[i].date);
+            datesArray.push(Chatty.setDate());
         }
-        console.log("dates", dates);
         Chatty.enterKeyPress();
         Chatty.writeToDom()
         Chatty.defaultListeners();
@@ -30,8 +29,13 @@ var Chatty = (function(chatapp){
         return messagesArray;
     };
 
+    chatapp.getDate = function(){
+        return datesArray;
+    }
+
     chatapp.addMessages = function(message){
         messagesArray.push(message);
+        datesArray.push(Chatty.setDate())
     }
 
 
