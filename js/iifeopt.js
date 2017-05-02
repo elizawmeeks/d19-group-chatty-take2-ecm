@@ -68,10 +68,11 @@ var Chatty = (function (oldChatty) {
         }
     }
 
-    // DELETE MESSAGE BUTTON FUNCTION
+    // DELETE MESSAGE BUTTON Event Listener
     oldChatty.deleteButton = function () {
         var messageDeleteButtons = document.getElementsByClassName('delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
+
             messageDeleteButtons.item(i).addEventListener("click", function(event) {
                 var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
                 var deleteDate = event.target.closest("div").querySelector(".date").innerHTML
@@ -80,6 +81,7 @@ var Chatty = (function (oldChatty) {
             });
         }
     }
+
 
     // Default Event Listeners
     oldChatty.defaultListeners = function () {

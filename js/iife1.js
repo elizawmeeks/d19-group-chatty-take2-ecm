@@ -35,7 +35,10 @@ var Chatty = (function(chatapp){
 
     chatapp.addMessages = function(message){
         messagesArray.push(message);
+
         datesArray.push(Chatty.setDate())
+        chatapp.messageLimit();
+
     }
 
 
