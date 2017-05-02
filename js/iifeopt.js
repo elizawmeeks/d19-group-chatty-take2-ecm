@@ -5,6 +5,7 @@ var Chatty = (function (oldChatty) {
     var newMessage = document.getElementById('message-input');
     var themeSelect = document.getElementById('theme-select');
     var textSizeSelect = document.getElementById('text-size-select');
+    var clearLogButton = document.getElementById('clear-log');
 
     // NAV CLEAR FUNCTION
     oldChatty.navClear = function () {
@@ -22,6 +23,7 @@ var Chatty = (function (oldChatty) {
             Chatty.deleteAllMessages();
         }
         Chatty.writeToDom();
+        clearLogButton.setAttribute("disabled", true);
     }
 
     // ENTER KYPRESS FUNCTION
@@ -70,16 +72,16 @@ var Chatty = (function (oldChatty) {
     oldChatty.deleteButton = function () {
         var messageDeleteButtons = document.getElementsByClassName('delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
-            messageDeleteButtons.item(i).addEventListener("click", oldChatty.deleteMsgFromDom);
+
+            messageDeleteButtons.item(i).addEventListener("click", function(event) {
+                var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
+                var deleteDate = event.target.closest("div").querySelector(".date").innerHTML
+                console.log("deleteMessage", deleteMessage);
+                Chatty.deleteMessages(deleteMessage, deleteDate);
+            });
         }
     }
 
-    // DELETE MESSAGE FUNCTION
-    oldChatty.deleteMsgFromDom = function () {
-        var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
-        console.log("deleteMessage", deleteMessage);
-        Chatty.deleteMessages(deleteMessage);
-    }
 
     // EDIT BUTTON EVENT LISTENER
     oldChatty.editButton = function() {
