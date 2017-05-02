@@ -25,6 +25,7 @@ var Chatty = (function(chatapp){
 		}
         Chatty.deleteButton();
         Chatty.editButton();
+        Chatty.scrollBottom();
         clearLogButton.removeAttribute("disabled");
 
 

@@ -7,10 +7,10 @@ body {
 
 main {
 	flex: 1 0 auto;
-	background-image: url("../img/dog-paw.svg");
-	background-repeat: no-repeat;
+	background-image: url("../img/animal-prints.svg");
+	background-repeat: repeat-y;
 	background-size: 100px;
-	background-position: bottom right;
+	background-position: right;
 }
 
 input[type=text] {
