@@ -22,6 +22,8 @@ var Chatty = (function(chatapp){
         Chatty.enterKeyPress();
         Chatty.writeToDom()
         Chatty.defaultListeners();
+        Chatty.optionsView();
+        Chatty.chatView();
         });
     }
 
