@@ -10,7 +10,7 @@ var Chatty = (function(chatapp){
 			write.innerHTML +=
 			`<div>
 			<p class="message">${messages[i]}</p>
-			<p>${dates[i]}</p>
+			<p class="date">${dates[i]}</p>
 			<button class="delete">Delete</button>
 			</div>`;
 		}
