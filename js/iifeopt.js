@@ -30,6 +30,7 @@ var Chatty = (function (oldChatty) {
             if (event.keyCode === 13) {
                 Chatty.addMessages(newMessage.value);
                 Chatty.writeToDom();
+                newMessage.value = null;
             }
 
         });
