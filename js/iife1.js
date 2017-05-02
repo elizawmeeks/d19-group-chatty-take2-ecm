@@ -4,7 +4,8 @@ console.log("iife1");
 var Chatty = (function(chatapp){
 
     var messagesArray = [];
-    var newJSON;
+    var newJSON = [];
+    var dates = [];
 
     chatapp.xhrfunction = function (){
         var loadMessages = new XMLHttpRequest();
@@ -13,9 +14,10 @@ var Chatty = (function(chatapp){
         loadMessages.addEventListener("load", function(event){
         newJSON = JSON.parse(event.target.responseText).messages;
         for (var i=0; i<newJSON.length;i++){
-            messagesArray += newJSON[i].text;
+            messagesArray.push(newJSON[i].text);
+            dates.push(newJSON[i].date);
         }
-        console.log("messagesArray", messagesArray);
+        console.log("dates", dates);
         Chatty.enterKeyPress();
         Chatty.writeToDom();
 
