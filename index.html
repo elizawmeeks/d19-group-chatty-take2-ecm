@@ -21,7 +21,7 @@
         </ul>
       </div>
     </nav>
-    
+
     <main> <!-- wrapper -->
       <div id="chatLogView" class="row">
         <div class="col s10 offset-s1">
@@ -61,17 +61,20 @@
               <option value="a">Default</option>
               <option value="b">Large Text</option>
             </select>
+
             <label>Select Text Size</label>
           </div>
           <button id="btn-selectText">Select Text Size</button>
         </div>
+        <!--Custom Color Modal Trigger -->
+           <a class="waves-effect waves-light btn" href="#modal1">Create Custom Theme</a>
       </div>
 
-        
+
     </main>
-    
+
     <footer class="page-footer amber lighten-2">
-      <div class="row"> 
+      <div class="row">
         <div class="input-field col s6 offset-s3">
           <input type="text" name="" id="message-input">
           <label for="message-input">Type your message</label>
@@ -81,22 +84,42 @@
           <button type="button" id="edit-btn" class="hidden">Edit Message</button>
         </div>
       </div>
-    </footer>  
+    </footer>
 
-    <!-- preview element -->
-    <div class="preview"></div>
 
-    <!-- colorpicker element -->
-    <div class="colorpicker" style="display:none">
-      <canvas id="picker" var="1" width="300" height="300"></canvas>
-        <div class="controls">
-            <div><label>R</label> <input type="text" id="rVal" /></div>
-            <div><label>G</label> <input type="text" id="gVal" /></div>
-            <div><label>B</label> <input type="text" id="bVal" /></div>
-            <div><label>RGB</label> <input type="text" id="rgbVal" /></div>
-            <div><label>HEX</label> <input type="text" id="hexVal" /></div>
+
+    <!-- Custom Theme Modal -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Choose your custom colors!</h4>
+          <div class="input-field col s6">
+            <select id="background-select">
+              <option value="Grey">Grey</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="Green">Green</option>
+              <option value="Black">Black</option>
+              <option value="White">White</option>
+            </select>
+            <label>Select Background</label>
+          </div>
+          <div class="input-field col s6">
+            <select id="text-select">
+              <option value="Grey">Grey</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="Green">Green</option>
+              <option value="Black">Black</option>
+              <option value="White">White</option>
+            </select>
+            <label>Select Background</label>
+          </div>
+
         </div>
-    </div>
+        <div class="modal-footer">
+        <a href="#!" id="color-btn" class="modal-action modal-close waves-effect waves-green btn-flat">Apply</a>
+        </div>
+      </div>
 
 
     <!--Import jQuery before materialize.js-->
@@ -107,6 +130,7 @@
     <script type="text/javascript" src="js/iifeopt.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/get-dates.js"></script>
+    <script type="text/javascript" src="js/modal-color.js"></script>
 
 
 
