@@ -6,39 +6,61 @@ var Chatty = (function(chatapp){
     var messagesArray = [];
     var newJSON = [];
     var newJSON2 = [];
+    var newJSON3 = [];
+    var newJSON4 = [];
+    var newJSON5 = [];
     var datesArray = [];
     var usersArray = [];
+    var pushData = function(JSONarray) {
+        for (var i=0; i< JSONarray.length;i++){
+            messagesArray.push(JSONarray[i].text);
+            datesArray.push(Chatty.setDate());
+            usersArray.push(JSONarray[i].user);
+        }
+    }
 
     chatapp.xhrfunction = function (){
         var loadMessages = new XMLHttpRequest();
         var loadMessages2 = new XMLHttpRequest();
+        var loadMessages3 = new XMLHttpRequest();
+        var loadMessages4 = new XMLHttpRequest();
+        var loadMessages5 = new XMLHttpRequest();
         loadMessages.open("GET", "startMessages.JSON");
-        loadMessages2.open("GET", "startMessages2.JSON")
+        loadMessages2.open("GET", "startMessages2.JSON");
+        loadMessages3.open("GET", "startMessages3.JSON");
+        loadMessages4.open("GET", "startMessages4.JSON");
+        loadMessages5.open("GET", "startMessages5.JSON");
         loadMessages.send();
         loadMessages.addEventListener("load", function(event){
             loadMessages2.send();
-        newJSON = JSON.parse(event.target.responseText).messages;
-        for (var i=0; i< newJSON.length;i++){
-            messagesArray.push(newJSON[i].text);
-            datesArray.push(Chatty.setDate());
-            usersArray.push(newJSON[i].user);
-        }
+            newJSON = JSON.parse(event.target.responseText).messages;
+            pushData(newJSON);
 
         });
         loadMessages2.addEventListener("load", function(event) {
+            loadMessages3.send();
             newJSON2 = JSON.parse(event.target.responseText).messages;
-            for (var i=0; i< newJSON.length;i++){
-                messagesArray.push(newJSON2[i].text);
-                datesArray.push(Chatty.setDate());
-                usersArray.push(newJSON2[i].user);
-            }
+            pushData(newJSON2);
+        });
+        loadMessages3.addEventListener("load", function(event) {
+            loadMessages4.send();
+            newJSON3 = JSON.parse(event.target.responseText).messages;
+            pushData(newJSON3);
+        });
+        loadMessages4.addEventListener("load", function(event) {
+            loadMessages5.send();
+            newJSON4 = JSON.parse(event.target.responseText).messages;
+            pushData(newJSON4);
+        });
+        loadMessages5.addEventListener("load", function(event) {
+            newJSON5 = JSON.parse(event.target.responseText).messages;
+            pushData(newJSON5);
             Chatty.enterKeyPress();
             Chatty.writeToDom()
             Chatty.defaultListeners();
         });
 
     }
-
 
     //To get array - run Chatty.getMessages();
     chatapp.getMessages = function(){

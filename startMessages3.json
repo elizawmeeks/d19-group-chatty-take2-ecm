@@ -1,14 +1,14 @@
 {
     "messages": [
         {
-        "text": "Hells bells!",
+        "text": "Everyone sucks.",
         "date": "Chatty.getDate()",
-        "user": "Bruce"
+        "user": "Troll"
         },
         {
-        "text": "Was that a computer talking?",
+        "text": "I hate myself.",
         "date": "Chatty.getDate()",
-        "user": "Bruce"
+        "user": "Troll"
         }
     ]
 
