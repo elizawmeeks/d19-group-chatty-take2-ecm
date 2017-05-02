@@ -38,6 +38,7 @@ var Chatty = (function (oldChatty) {
 
         });
     }
+
     // SELECT THEME FUNCTION
     oldChatty.selectTheme = function () {
         var themesSelect = document.getElementById("theme-select");
@@ -84,6 +85,25 @@ var Chatty = (function (oldChatty) {
         }
     }
 
+
+    // EDIT BUTTON EVENT LISTENER
+    oldChatty.editButton = function() {
+        var editMessage = document.getElementsByClassName("edit");
+        for (var i = 0; i < editMessage.length; i++){
+            editMessage.item(i).addEventListener("click", function(){
+                var originalMessage = event.target.closest("div").querySelector(".message").innerHTML;
+                var inputBox = document.getElementById("message-input");
+                var editButton = document.getElementById("edit-btn");
+                inputBox.focus();
+                inputBox.value = originalMessage;
+                editButton.classList.remove("hidden");
+                editButton.addEventListener("click", function(event){
+                    Chatty.editMessages(originalMessage, inputBox.value);
+                    editButton.classList.add("hidden");
+                })
+            });
+        }
+    }
 
     // Default Event Listeners
     oldChatty.defaultListeners = function () {
