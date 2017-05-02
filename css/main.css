@@ -1,6 +1,24 @@
+body {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+main {
+flex: 1 0 auto;
+}
+
+input[type=text] {
+	margin-bottom: 0;
+}
+
+img {
+	margin: 13px 0 0 10px;
+}
+
 #chat-log {
     border: 1px solid black;
-    height: 500px;
+    height: 400px;
     overflow: scroll;
 }
 

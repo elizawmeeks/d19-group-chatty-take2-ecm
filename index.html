@@ -7,48 +7,81 @@
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav>
-    <div class="">
-      <h1>Kachatstrophe</h1>
-        <img class="logo" src="img/cat.svg"> <img class="logo" src="img/happy-emoticon-with-one-tooth.svg"> <img class="logo" src="img/trophy-cup-silhouette.svg">
-        <input type="text" name="" id="message-input">
-        <button type="button" id="clear-log">Clear</button>
-        <button type="button" id="edit-btn" class="hidden">Edit Message</button>
-        <br><br>
-        <select id="user-select">
-           <option value="Anonymous">Select User</option>
-           <option value="Eliza">Eliza</option>
-           <option value="Chaz">Chaz</option>
-           <option value="Matt">Matt</option>
-           <option value="The Donald">President Drump</option>
-           <option value="Bill Nye">Bill Nye</option>
-           <option value="Troll">Troll</option>
-       </select><br>
-       <select id="theme-select">
-           <option value="1">Default Theme</option>
-           <option value="2">Dark Theme</option>
-       </select>
-       <button id="btn-selectTheme">Select Theme</button><br>
-       <select id="text-size-select">
-           <option value="a">Default</option>
-           <option value="b">Large Text</option>
-       </select>
-       <button id="btn-selectText">Select Text Size</button>
-    </div>
+
+    <nav> <!-- Logo and App Name -->
+      <div class="nav-wrapper teal lighten-3">
+        <a href="#" class="brand-logo"><img class="logo" src="img/cat.svg"> <img class="logo" src="img/happy-emoticon-with-one-tooth.svg"> <img class="logo" src="img/trophy-cup-silhouette.svg"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li id="chatLogClick">Katchatstrophe</li>
+          <li id="optionsClick">Options</li>
+        </ul>
+      </div>
     </nav>
+    
     <main> <!-- wrapper -->
-        <h3>Chat Log</h3>
-        <div id="chat-log"> <!-- Dom Target  -->
-            <div id="write">
-
-            </div>
+      <div id="chatLogView" class="row">
+        <div class="col s10 offset-s1">
+          <p>Chat Log</p>
+          <div id="chat-log"> <!-- Dom Target  -->
+              <div id="write">
+              </div>
+          </div>
         </div>
-    </main>
+      </div>
 
+      <div id="optionsView" class="row hidden">
+        <div class="col s10 offset-s1">
+          <br><br>
+          <div class="input-field col s6">
+            <select id="user-select">
+              <option value="Eliza">Eliza</option>
+              <option value="Chaz">Chaz</option>
+              <option value="Matt">Matt</option>
+              <option value="The Donald">President Drump</option>
+              <option value="Bill Nye">Bill Nye</option>
+              <option value="Troll">Troll</option>
+            </select>
+            <label>Select User</label>
+          </div>
+          <br>
+          <div class="input-field col s6">
+            <select id="theme-select">
+              <option value="1">Default Theme</option>
+              <option value="2">Dark Theme</option>
+            </select>
+            <label>Select Theme</label>
+          </div>
+          <button id="btn-selectTheme">Select Theme</button><br>
+          <div class="input-field col s6">
+            <select id="text-size-select">
+              <option value="a">Default</option>
+              <option value="b">Large Text</option>
+            </select>
+            <label>Select Text Size</label>
+          </div>
+          <button id="btn-selectText">Select Text Size</button>
+        </div>
+      </div>
+
+        
+    </main>
+    
+    <footer class="page-footer amber lighten-2">
+      <div class="row"> 
+        <div class="input-field col s6 offset-s3">
+          <input type="text" name="" id="message-input">
+          <label for="message-input">Type your message</label>
+        </div>
+        <div class="col s3 valign-wrapper">
+          <button type="button" id="clear-log">Clear</button>
+          <button type="button" id="edit-btn" class="hidden">Edit Message</button>
+        </div>
+      </div>
+    </footer>  
 
     <!-- preview element -->
     <div class="preview"></div>

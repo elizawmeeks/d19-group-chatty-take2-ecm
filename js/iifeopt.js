@@ -116,6 +116,28 @@ var Chatty = (function (oldChatty) {
         clearLogButton.addEventListener("click", Chatty.navClear);
     }
 
+    oldChatty.optionsView = function (){
+        var optionsClick = document.getElementById("optionsClick");
+        optionsClick.addEventListener("click", function(){
+            var optionsView = document.getElementById("optionsView");
+            var chatView = document.getElementById("chatLogView");
+            console.log("options view clicked");
+            optionsView.classList.remove("hidden");
+            chatView.classList.add("hidden");
+        })
+    }
+
+    oldChatty.chatView = function (){
+        var chatLogClick = document.getElementById("chatLogClick");
+        chatLogClick.addEventListener("click", function(){
+            var optionsView = document.getElementById("optionsView");
+            var chatView = document.getElementById("chatLogView");
+            console.log("chat view clicked");
+            optionsView.classList.add("hidden");
+            chatView.classList.remove("hidden");
+        })
+    }
+
     return oldChatty
 })(Chatty || {});
 
