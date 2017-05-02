@@ -68,16 +68,19 @@ var Chatty = (function (oldChatty) {
         }
     }
 
-    // DELETE MESSAGE BUTTON FUNCTION
+    // DELETE MESSAGE BUTTON Event Listener
     oldChatty.deleteButton = function () {
         var messageDeleteButtons = document.getElementsByClassName('delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
-            messageDeleteButtons.item(i).addEventListener("click", function(event) {
-                var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
-                console.log("deleteMessage", deleteMessage);
-                Chatty.deleteMessages(deleteMessage);
-            });
+            messageDeleteButtons.item(i).addEventListener("click", oldChatty.deleteMsgFromDom);
         }
+    }
+
+    // DELETE MESSAGE FUNCTION
+    oldChatty.deleteMsgFromDom = function () {
+        var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
+        console.log("deleteMessage", deleteMessage);
+        Chatty.deleteMessages(deleteMessage);
     }
 
     // Default Event Listeners

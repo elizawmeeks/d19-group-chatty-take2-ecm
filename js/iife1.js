@@ -32,6 +32,7 @@ var Chatty = (function(chatapp){
 
     chatapp.addMessages = function(message){
         messagesArray.push(message);
+        chatapp.messageLimit();
     }
 
 
