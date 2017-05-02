@@ -5,6 +5,7 @@ var Chatty = (function (oldChatty) {
     var newMessage = document.getElementById('message-input');
     var themeSelect = document.getElementById('theme-select');
     var textSizeSelect = document.getElementById('text-size-select');
+    var clearLogButton = document.getElementById('clear-log');
 
     // NAV CLEAR FUNCTION
     oldChatty.navClear = function () {
@@ -22,6 +23,7 @@ var Chatty = (function (oldChatty) {
             Chatty.deleteAllMessages();
         }
         Chatty.writeToDom();
+        clearLogButton.setAttribute("disabled", true);
     }
 
     // ENTER KYPRESS FUNCTION
@@ -76,6 +78,17 @@ var Chatty = (function (oldChatty) {
                 Chatty.deleteMessages(deleteMessage);
             });
         }
+    }
+
+    // Default Event Listeners
+    oldChatty.defaultListeners = function () {
+        var themesBtn = document.getElementById('btn-selectTheme');
+        var textBtn = document.getElementById("btn-selectText");
+        var clearLogButton = document.getElementById('clear-log');
+
+        themesBtn.addEventListener("click", Chatty.selectTheme);
+        textBtn.addEventListener("click", Chatty.selectTextSize);
+        clearLogButton.addEventListener("click", Chatty.navClear);
     }
 
     return oldChatty
