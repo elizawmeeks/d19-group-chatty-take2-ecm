@@ -14,9 +14,11 @@ var Chatty = (function(chatapp){
 			<p class="user">-${users[i]}</p>
 			<p class="date">${dates[i]}</p>
 			<button class="delete">Delete</button>
+			<button class="edit">Edit</button>
 			</div>`;
 		}
         Chatty.deleteButton();
+        Chatty.editButton();
         clearLogButton.removeAttribute("disabled");
 
 
