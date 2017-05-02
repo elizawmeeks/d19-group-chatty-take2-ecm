@@ -19,8 +19,8 @@ var Chatty = (function(chatapp){
         }
         console.log("dates", dates);
         Chatty.enterKeyPress();
-        Chatty.writeToDom();
-
+        Chatty.writeToDom()
+        Chatty.defaultListeners();
         });
     }
 
