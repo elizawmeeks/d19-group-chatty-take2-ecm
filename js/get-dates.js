@@ -2,7 +2,7 @@ console.log("TINY RICK!!!!!!!");
 
 var Chatty = (function(chatapp){
 
-    chatapp.getDate = function(){
+    chatapp.setDate = function(){
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth()+1;

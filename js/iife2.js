@@ -4,18 +4,19 @@ var Chatty = (function(chatapp){
 
 	chatapp.writeToDom = function(){
 		var messages = Chatty.getMessages();
+		var dates = Chatty.getDate();
         write.innerHTML = "";
 		for (var i = 0; i < messages.length; i++){
-			var date = Chatty.getDate();
 			write.innerHTML +=
 			`<div>
 			<p class="message">${messages[i]}</p>
-			<p>${date}</p>
+			<p class="date">${dates[i]}</p>
 			<button class="delete">Delete</button>
 			</div>`;
 		}
         Chatty.deleteButton();
         clearLogButton.removeAttribute("disabled");
+
 
 	}
 
@@ -32,6 +33,7 @@ var Chatty = (function(chatapp){
 				console.log("There are fewer than 20 messages");
 				break;
 		}
+
 	}
 
 	return chatapp;

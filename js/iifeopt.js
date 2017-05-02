@@ -72,16 +72,16 @@ var Chatty = (function (oldChatty) {
     oldChatty.deleteButton = function () {
         var messageDeleteButtons = document.getElementsByClassName('delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
-            messageDeleteButtons.item(i).addEventListener("click", oldChatty.deleteMsgFromDom);
+
+            messageDeleteButtons.item(i).addEventListener("click", function(event) {
+                var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
+                var deleteDate = event.target.closest("div").querySelector(".date").innerHTML
+                console.log("deleteMessage", deleteMessage);
+                Chatty.deleteMessages(deleteMessage, deleteDate);
+            });
         }
     }
 
-    // DELETE MESSAGE FUNCTION
-    oldChatty.deleteMsgFromDom = function () {
-        var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
-        console.log("deleteMessage", deleteMessage);
-        Chatty.deleteMessages(deleteMessage);
-    }
 
     // Default Event Listeners
     oldChatty.defaultListeners = function () {
