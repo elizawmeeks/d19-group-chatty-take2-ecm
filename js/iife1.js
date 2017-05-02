@@ -56,8 +56,9 @@ var Chatty = (function(chatapp){
         Chatty.writeToDom();
     }
 
-    chatapp.editArray = function(index, message){
-        messagesArray.splice(index, 1, message);
+    chatapp.editMessages = function(originalMessage, newMessage){
+        var indexMessage = messagesArray.indexOf(originalMessage);
+        messagesArray.splice(indexMessage, 1, newMessage);
     }
 
     return chatapp;
