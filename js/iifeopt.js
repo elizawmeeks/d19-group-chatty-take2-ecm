@@ -78,6 +78,17 @@ var Chatty = (function (oldChatty) {
         }
     }
 
+    // Default Event Listeners
+    oldChatty.defaultListeners = function () {
+        var themesBtn = document.getElementById('btn-selectTheme');
+        var textBtn = document.getElementById("btn-selectText");
+        var clearLogButton = document.getElementById('clear-log');
+
+        themesBtn.addEventListener("click", Chatty.selectTheme);
+        textBtn.addEventListener("click", Chatty.selectTextSize);
+        clearLogButton.addEventListener("click", Chatty.navClear);
+    }
+
     return oldChatty
 })(Chatty || {});
 

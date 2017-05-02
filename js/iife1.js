@@ -14,7 +14,7 @@ var Chatty = (function(chatapp){
         console.log("messagesArray", messagesArray);
         Chatty.enterKeyPress();
         Chatty.writeToDom();
-
+        Chatty.defaultListeners();
         });
     }
 
