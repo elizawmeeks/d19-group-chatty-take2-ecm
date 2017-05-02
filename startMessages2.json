@@ -1,0 +1,30 @@
+{
+    "messages": [
+        {
+        "text": "Hells bells!",
+        "date": "Chatty.getDate()",
+        "user": "Bruce"
+        },
+        {
+        "text": "Was that a computer talking?",
+        "date": "Chatty.getDate()",
+        "user": "Bruce"
+        },
+        {
+        "text": "Hide Yo Wife",
+        "date": "Chatty.getDate()",
+        "user": "Bruce"
+        },
+        {
+        "text": "Hide Yo Kids",
+        "date": "Chatty.getDate()",
+        "user": "Bruce"
+        },
+        {
+        "text": "Annnd where did the robot go?",
+        "date": "Chatty.getDate()",
+        "user": "Bruce"
+        }
+    ]
+
+}
