@@ -42,6 +42,10 @@ var Chatty = (function(chatapp){
         Chatty.writeToDom();
     }
 
+    chatapp.editArray = function(index, message){
+        messagesArray.splice(index, 1, message);
+    }
+
     return chatapp;
 
 })(Chatty || {});

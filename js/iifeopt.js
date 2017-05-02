@@ -81,6 +81,16 @@ var Chatty = (function (oldChatty) {
         Chatty.deleteMessages(deleteMessage);
     }
 
+    // EDIT BUTTON EVENT LISTENER
+    oldChatty.editButton = function() {
+        var editMessage = document.getElementsByClassName("edit");
+        for var (i = 0; i < editMessage.length; i++){
+            editMessage.item(i).addEventListener("click", function(){
+                
+            });
+        }
+    }
+
     // Default Event Listeners
     oldChatty.defaultListeners = function () {
         var themesBtn = document.getElementById('btn-selectTheme');
