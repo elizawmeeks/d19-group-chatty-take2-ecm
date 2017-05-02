@@ -4,6 +4,10 @@
     overflow: scroll;
 }
 
+.logo {
+	height: 35px;
+}
+
 .darkTheme {
 	background-color: #454B4B;
 	color: white;
