@@ -1,0 +1,15 @@
+{
+    "messages": [
+        {
+        "text": "Good Golly Miss Molly",
+        "date": "Chatty.getDate()",
+        "user": "Ida Mae"
+        },
+        {
+        "text": "Json files are annoying to edit.",
+        "date": "Chatty.getDate()",
+        "user": "The Truth"
+        }
+    ]
+
+}
