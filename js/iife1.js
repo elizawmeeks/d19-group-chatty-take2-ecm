@@ -40,7 +40,8 @@ var Chatty = (function(chatapp){
 
 
     chatapp.deleteAllMessages = function() {
-        messagesArray.splice(0, messagesArray.length);
+        messagesArray = [];
+        datesArray = [];
     }
 
     chatapp.deleteMessages = function(message){
