@@ -28,11 +28,17 @@ var Chatty = (function(chatapp){
         messagesArray.push(message);
     }
 
+
     chatapp.deleteAllMessages = function() {
         messagesArray.splice(0, messagesArray.length);
     }
-    chatapp.deleteMessages = function(index){
+
+    chatapp.deleteMessages = function(message){
+        var index = messagesArray.indexOf(message);
+        console.log("index", index);
         messagesArray.splice(index, 1);
+        console.log("messagesArray after splice", messagesArray);
+        Chatty.writeToDom();
     }
 
     return chatapp;

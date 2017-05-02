@@ -1,4 +1,3 @@
-
 #chat-log {
     border: 1px solid black;
     height: 500px;
@@ -7,4 +6,13 @@
 
 .logo {
 	height: 35px;
+}
+
+.darkTheme {
+	background-color: #454B4B;
+	color: white;
+}
+
+.largeText {
+	font-size: 3em;
 }

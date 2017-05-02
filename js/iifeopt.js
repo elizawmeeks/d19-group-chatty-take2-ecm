@@ -36,39 +36,45 @@ var Chatty = (function (oldChatty) {
     }
     // SELECT THEME FUNCTION
     oldChatty.selectTheme = function () {
-        var themes = document.getElementsByName('theme-select');
-        for (let i = 0; i < themes.length; i++) {
-            if (themes[i].value === b) {
-                // adding/removing class
-            }else if(true) {
-                // adding/removing class
-            }
+        var themesSelect = document.getElementById("theme-select");
+        switch (themesSelect.value){
+            case "1":
+                document.body.classList.remove("darkTheme");
+                break;
+            case "2":
+                document.body.classList.add("darkTheme");
+                break;
+            default:
+                console.log("Something is wrong");
         }
-        var sizes = document.getElementsByName('text-size-select');
-        for (let i = 0; i < sizes.length; i++) {
-            if (sizes[i].value === b) {
-                // adding/removing class
-            }else if(true) {
-                // adding/removing class
-            }
-        }
-
-
     }
+
+    // Select Text Size Function
+    oldChatty.selectTextSize = function () {
+        var textSizeSelect = document.getElementById("text-size-select");
+        var write = document.getElementById("write");
+        switch (textSizeSelect.value){
+            case "a":
+                write.classList.remove("largeText");
+                break;
+            case "b":
+                write.classList.add("largeText");
+                break;
+            default:
+                console.log("Something is wrong");
+        }
+    }
+
     // DELETE MESSAGE BUTTON FUNCTION
     oldChatty.deleteButton = function () {
         var messageDeleteButtons = document.getElementsByClassName('delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
             messageDeleteButtons.item(i).addEventListener("click", function(event) {
-                var deleteMessage = event.target.closest("div").querySelector("<p>");
+                var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
                 console.log("deleteMessage", deleteMessage);
-
-
+                Chatty.deleteMessages(deleteMessage);
             });
-
-
-        }[]
-
+        }
     }
 
     return oldChatty
