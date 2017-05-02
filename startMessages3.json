@@ -1,0 +1,15 @@
+{
+    "messages": [
+        {
+        "text": "Everyone sucks.",
+        "date": "Chatty.getDate()",
+        "user": "Troll"
+        },
+        {
+        "text": "I hate myself.",
+        "date": "Chatty.getDate()",
+        "user": "Troll"
+        }
+    ]
+
+}
