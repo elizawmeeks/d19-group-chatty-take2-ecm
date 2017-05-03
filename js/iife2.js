@@ -9,6 +9,7 @@ var Chatty = (function(chatapp){
         write.innerHTML = "";
 		for (var i = 0; i < messages.length; i++){
 			write.innerHTML +=
+
 			`<div class="individualMsg">
 				<div class="row">
 					<div class="col s9 grey-text text-darken-3">
@@ -22,11 +23,13 @@ var Chatty = (function(chatapp){
 					</div>
 				</div>
 			</div>`;
+            
 		}
         Chatty.deleteButton();
         Chatty.editButton();
         Chatty.scrollBottom();
         clearLogButton.removeAttribute("disabled");
+
 
 
 	}
