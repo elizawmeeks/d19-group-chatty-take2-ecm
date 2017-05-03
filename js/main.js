@@ -12,11 +12,9 @@ console.log("main.js loaded");
 
 Chatty.xhrfunction();
 
-var messagesFire = firebase.database().ref('messages/');
 
-
-messagesFire.set({
-      date: "Chatty.getDate();",
-      text: "What up.",
-      user: "Matt yeah"
-});
+// messagesFire.set({
+//       date: "Chatty.getDate();",
+//       text: "What up.",
+//       user: "Matt yeah"
+// });

@@ -7,7 +7,18 @@ var Chatty = (function(chatapp){
 		var dates = Chatty.getDate();
 		var users = Chatty.getUsers();
         write.innerHTML = "";
-		for (var i = 0; i < messages.length; i++){
+
+  		// FIREBASE SHIT
+        var messagesFire = firebase.database().ref('messages/');
+
+        var thingsObject;
+		messagesFire.on("value", function(snapshot) {
+		   thingsObject = snapshot.val();
+
+		   for (var i = 0; i < thingsObject.length; i++){
+			Chatty.addMessages (thingsObject[i].text, thingsObject[i].date, thingsObject[i].user);
+
+
 			write.innerHTML +=
 
 			`<div class="individualMsg">
@@ -25,6 +36,10 @@ var Chatty = (function(chatapp){
 			</div>`;
 
 		}
+		}, function (error) {
+		   console.log("Error: " + error.code);
+		});
+
         Chatty.deleteButton();
         Chatty.editButton();
         Chatty.scrollBottom();

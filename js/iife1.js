@@ -77,7 +77,7 @@ var Chatty = (function(chatapp){
         return usersArray;
     }
 
-    chatapp.addMessages = function(message, user){
+    chatapp.addMessages = function(message, date, user){
         messagesArray.push(message);
         usersArray.push(user);
         datesArray.push(Chatty.setDate())
