@@ -76,9 +76,9 @@ var Chatty = (function (oldChatty) {
         for (var i = 0; i < messageDeleteButtons.length; i++) {
 
             messageDeleteButtons.item(i).addEventListener("click", function(event) {
-                var deleteMessage = event.target.closest("div").querySelector(".message").innerHTML;
-                var deleteDate = event.target.closest("div").querySelector(".date").innerHTML;
-                var deleteUser = event.target.closest("div").querySelector(".user").innerHTML;
+                var deleteMessage = event.target.closest(".row").querySelector(".message").innerHTML;
+                var deleteDate = event.target.closest(".row").querySelector(".date").innerHTML;
+                var deleteUser = event.target.closest(".row").querySelector(".user").innerHTML;
                 console.log("deleteMessage", deleteMessage);
                 Chatty.deleteMessages(deleteMessage, deleteDate, deleteUser);
             });
@@ -91,7 +91,7 @@ var Chatty = (function (oldChatty) {
         var editMessage = document.getElementsByClassName("edit");
         for (var i = 0; i < editMessage.length; i++){
             editMessage.item(i).addEventListener("click", function(){
-                var originalMessage = event.target.closest("div").querySelector(".message").innerHTML;
+                var originalMessage = event.target.closest(".row").querySelector(".message").innerHTML;
                 var inputBox = document.getElementById("message-input");
                 var editButton = document.getElementById("edit-btn");
                 inputBox.focus();
@@ -100,6 +100,7 @@ var Chatty = (function (oldChatty) {
                 editButton.addEventListener("click", function(event){
                     Chatty.editMessages(originalMessage, inputBox.value);
                     editButton.classList.add("hidden");
+                    inputBox.value = null;
                 })
             });
         }
