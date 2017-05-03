@@ -94,12 +94,10 @@ var Chatty = (function(chatapp){
 
     chatapp.deleteMessages = function(message, date, user){
         var indexMessage = messagesArray.indexOf(message);
-        var indexDate = datesArray.indexOf(date);
-        var indexUser = usersArray.indexOf(user);
         messagesArray.splice(indexMessage, 1);
-        datesArray.splice(indexDate,1);
-        usersArray.splice(indexUser, 1);
-        console.log("messagesArray after splice", messagesArray);
+        datesArray.splice(indexMessage,1);
+        usersArray.splice(indexMessage, 1);
+        // console.log("Arrays after splice", messagesArray, datesArray, usersArray);
         Chatty.writeToDom();
     }
 

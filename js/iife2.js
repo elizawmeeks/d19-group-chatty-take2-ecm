@@ -23,7 +23,7 @@ var Chatty = (function(chatapp){
 					</div>
 				</div>
 			</div>`;
-            
+
 		}
         Chatty.deleteButton();
         Chatty.editButton();
@@ -36,7 +36,7 @@ var Chatty = (function(chatapp){
 
 	chatapp.messageLimit = function(){
 		var messages = Chatty.getMessages();
-		console.log("messages", messages);
+		// console.log("messages", messages);
 		switch (true){
 			case (messages.length > 20):
 				console.log("There are more than 20 messages");
@@ -52,7 +52,7 @@ var Chatty = (function(chatapp){
 
 	chatapp.scrollBottom = function(){
 		var chatLog = document.getElementById("chat-log");
-		console.log("chatLog", chatLog);
+		// console.log("chatLog", chatLog);
 		chatLog.scrollTop = chatLog.scrollHeight;
 	}
 
