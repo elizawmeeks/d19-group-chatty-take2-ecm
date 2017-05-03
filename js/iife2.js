@@ -23,7 +23,7 @@ var Chatty = (function(chatapp){
 					</div>
 				</div>
 			</div>`;
-            }
+            
 		}
         Chatty.deleteButton();
         Chatty.editButton();
