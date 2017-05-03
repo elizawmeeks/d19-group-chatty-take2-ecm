@@ -12,6 +12,11 @@ var Chatty = (function(chatapp){
             usersArray.push(JSONarray[i].user);
         }
     }
+    // var newJSON = [];
+    // var newJSON2 = [];
+    // var newJSON3 = [];
+    // var newJSON4 = [];
+    // var newJSON5 = [];
 
     chatapp.xhrfunction = function (){
         var loadMessages = new XMLHttpRequest();
