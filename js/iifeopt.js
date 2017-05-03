@@ -111,7 +111,10 @@ var Chatty = (function (oldChatty) {
         var themesBtn = document.getElementById('btn-selectTheme');
         var textBtn = document.getElementById("btn-selectText");
         var clearLogButton = document.getElementById('clear-log');
+        var colorBtn = document.getElementById("color-btn");
 
+
+        colorBtn.addEventListener("click", Chatty.setUserColor);
         themesBtn.addEventListener("click", Chatty.selectTheme);
         textBtn.addEventListener("click", Chatty.selectTextSize);
         clearLogButton.addEventListener("click", Chatty.navClear);
