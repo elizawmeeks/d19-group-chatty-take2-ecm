@@ -36,6 +36,7 @@ var Chatty = (function (oldChatty) {
                 newMessage.value = null;
             }
 
+
         });
     }
 

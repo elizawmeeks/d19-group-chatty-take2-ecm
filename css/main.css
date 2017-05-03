@@ -39,4 +39,29 @@ img {
 	display: none;
 }
 
+.message,
+.message-container{
+    margin-bottom: 1px;
+}
+
+.message{
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -8,18 +8,35 @@ var Chatty = (function(chatapp){
 		var users = Chatty.getUsers();
         write.innerHTML = "";
 		for (var i = 0; i < messages.length; i++){
+            if (users[i] === "Kat" || users[i] === "Troll" || users[i] === "Ida Mae"){
 			write.innerHTML +=
-			`<div>
-			<p class="message">${messages[i]}</p>
-			<p class="user">-${users[i]}</p>
-			<p class="date">${dates[i]}</p>
-			<button class="delete">Delete</button>
-			<button class="edit">Edit</button>
+			`<div class="row message-container">
+			<p class=" col s6 offset-s6 message">${messages[i]}</p>
+            </div>
+            <div class="row message-details">
+			<p class="col s2 offset-s6 user">-${users[i]}</p>
+			<p class="col s2  date">${dates[i]}</p>
+			<button class=" col s1  delete">Delete</button>
+			<button class="col s1  edit">Edit</button>
 			</div>`;
+            } else {
+                write.innerHTML +=
+            `<div class="row message-container">
+            <p class="message">${messages[i]}</p>
+            </div>
+            <div class="row message-details">
+            <p class="col s2 user">-${users[i]}</p>
+            <p class="col s2 date">${dates[i]}</p>
+            <button class=" col s1 delete">Delete</button>
+            <button class="col s1 edit">Edit</button>
+            </div>`;
+
+            }
 		}
         Chatty.deleteButton();
         Chatty.editButton();
         clearLogButton.removeAttribute("disabled");
+
 
 
 	}
