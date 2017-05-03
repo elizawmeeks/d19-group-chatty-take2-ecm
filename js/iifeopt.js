@@ -34,6 +34,7 @@ var Chatty = (function (oldChatty) {
                 Chatty.addMessages(newMessage.value, user);
                 Chatty.writeToDom();
                 newMessage.value = null;
+                location.reload();
             }
 
 
