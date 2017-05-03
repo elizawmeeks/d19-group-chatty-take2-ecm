@@ -91,7 +91,7 @@ var Chatty = (function (oldChatty) {
         var editMessage = document.getElementsByClassName("edit");
         for (var i = 0; i < editMessage.length; i++){
             editMessage.item(i).addEventListener("click", function(){
-                var originalMessage = event.target.closest("div").querySelector(".message").innerHTML;
+                var originalMessage = event.target.closest(".row").querySelector(".message").innerHTML;
                 var inputBox = document.getElementById("message-input");
                 var editButton = document.getElementById("edit-btn");
                 inputBox.focus();
