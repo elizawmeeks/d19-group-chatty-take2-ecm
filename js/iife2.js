@@ -10,17 +10,17 @@ var Chatty = (function(chatapp){
 		for (var i = 0; i < messages.length; i++){
 			write.innerHTML +=
 			`<div class="individualMsg">
-			<div class="row">
-			<div class="col s9">
-			<p class="message">${messages[i]}</p>
-			<p class="user">-${users[i]}</p>
-			<p class="date">${dates[i]}</p>
-			</div>
-			<div class="col s3 buttons">
-			<a class="delete waves-effect waves-light btn">Delete</a>
-			<a class="edit waves-effect waves-light btn">Edit</a>
-			</div>
-			</div>
+				<div class="row">
+					<div class="col s9 grey-text text-darken-3">
+						<p class="message">${messages[i]}</p>
+						<p class="user">-${users[i]}</p>
+						<p class="date">${dates[i]}</p>
+					</div>
+					<div class="col s3 buttons">
+						<a class="delete waves-effect waves-light btn">Delete</a>
+						<a class="edit waves-effect waves-light btn">Edit</a>
+					</div>
+				</div>
 			</div>`;
 		}
         Chatty.deleteButton();
