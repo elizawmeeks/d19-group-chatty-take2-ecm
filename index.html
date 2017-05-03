@@ -9,6 +9,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/ico" href="img/favicon-yellow.ico">
 </head>
 <body>
 
@@ -17,7 +18,7 @@
         <a href="#" class="brand-logo"><img class="logo" src="img/cat.svg"> <img class="logo" src="img/happy-emoticon-with-one-tooth.svg"> <img class="logo" src="img/trophy-cup-silhouette.svg"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li id="chatLogClick">Katchatstrophe</li>
-          <li id="optionsClick">Options</li>
+          <li id="optionsClick"><i class="large material-icons">settings</i></li>
         </ul>
       </div>
     </nav>
@@ -25,7 +26,6 @@
     <main> <!-- wrapper -->
       <div id="chatLogView" class="row">
         <div class="col s10 offset-s1">
-          <p>Chat Log</p>
           <div id="chat-log"> <!-- Dom Target  -->
               <div id="write">
               </div>
@@ -35,36 +35,45 @@
 
       <div id="optionsView" class="row hidden">
         <div class="col s10 offset-s1">
-          <br><br>
-          <div class="input-field col s6">
-            <select id="user-select">
-              <option value="Eliza">Eliza</option>
-              <option value="Chaz">Chaz</option>
-              <option value="Matt">Matt</option>
-              <option value="The Donald">President Drump</option>
-              <option value="Bill Nye">Bill Nye</option>
-              <option value="Troll">Troll</option>
-            </select>
-            <label>Select User</label>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <select id="user-select">
+                <option value="Eliza">Eliza</option>
+                <option value="Chaz">Chaz</option>
+                <option value="Matt">Matt</option>
+                <option value="The Donald">President Drump</option>
+                <option value="Bill Nye">Bill Nye</option>
+                <option value="Troll">Troll</option>
+              </select>
+              <label>Select User</label>
+            </div>
           </div>
           <br>
-          <div class="input-field col s6">
-            <select id="theme-select">
-              <option value="1">Default Theme</option>
-              <option value="2">Dark Theme</option>
-            </select>
-            <label>Select Theme</label>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <select id="theme-select">
+                <option value="1">Default Theme</option>
+                <option value="2">Dark Theme</option>
+              </select>
+              <label>Select Theme</label>
+            </div>
+            <div class="col s3 offset-s9">
+              <a id="btn-selectTheme" class="waves-effect waves-light btn amber lighten-3 grey-text text-darken-1">Select Theme</a>
+            </div>
           </div>
-          <button id="btn-selectTheme">Select Theme</button><br>
-          <div class="input-field col s6">
-            <select id="text-size-select">
-              <option value="a">Default</option>
-              <option value="b">Large Text</option>
-            </select>
 
-            <label>Select Text Size</label>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <select id="text-size-select">
+                <option value="a">Default</option>
+                <option value="b">Large Text</option>
+              </select>
+              <label>Select Text Size</label>
+            </div>
+            <div class="col s3 offset-s9">
+              <a id="btn-selectText" class="waves-effect waves-light btn amber lighten-3 grey-text text-darken-1">Select Text Size</a>
+            </div>
           </div>
-          <button id="btn-selectText">Select Text Size</button>
         </div>
         <!--Custom Color Modal Trigger -->
            <a class="waves-effect waves-light btn" href="#modal1">Create Custom Theme</a>
@@ -80,8 +89,8 @@
           <label for="message-input">Type your message</label>
         </div>
         <div class="col s3 valign-wrapper">
-          <button type="button" id="clear-log">Clear</button>
-          <button type="button" id="edit-btn" class="hidden">Edit Message</button>
+          <a id="clear-log" class="waves-effect waves-light btn teal lighten-3">Clear</a>
+          <a id="edit-btn" class="hidden waves-effect waves-light btn teal lighten-3">Edit Message</a>
         </div>
       </div>
     </footer>

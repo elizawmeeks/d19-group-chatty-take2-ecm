@@ -1,31 +1,79 @@
+/*General Styles*/
 body {
-display: flex;
-min-height: 100vh;
-flex-direction: column;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 main {
-flex: 1 0 auto;
+	flex: 1 0 auto;
+	background-image: url("../img/animal-prints.svg");
+	background-repeat: repeat-y;
+	background-size: 100px;
+	background-position: right;
 }
 
 input[type=text] {
 	margin-bottom: 0;
 }
-
+/*Nav Styling*/
 img {
 	margin: 13px 0 0 10px;
-}
-
-#chat-log {
-    border: 1px solid black;
-    height: 400px;
-    overflow: scroll;
 }
 
 .logo {
 	height: 35px;
 }
+#chatLogClick, #optionsClick{
+	margin-right: 20px;
+}
 
+#chatLogClick:hover, #optionsClick:hover {
+	cursor: pointer;
+}
+/*Chat View*/
+#chat-log {
+    height: calc(100vh - 164px);
+    overflow: scroll;
+    padding: 10px 0;
+}
+
+div#chatLogView.row {
+	margin-bottom: 0;
+}
+
+.individualMsg {
+	border-radius: 15px;
+	padding: 10px 25px;
+	margin: 25px 25px 0;
+}
+
+.individualMsg:nth-child(even){
+	background-color: #fff8e1;
+	text-align: right;
+}
+
+.individualMsg:nth-child(even) a{
+	background-color: #ffe082;
+	color: #757575;
+}
+
+.individualMsg:nth-child(odd){
+	background-color: #e0f2f1;
+}
+
+.individualMsg:nth-child(odd) a{
+	background-color: #80cbc4;
+}
+
+.delete {
+	margin: 25px 0 15px;
+}
+
+.buttons {
+	text-align: center
+}
+/*Change Theme Styles*/
 .darkTheme {
 	background-color: #454B4B;
 	color: white;
@@ -35,17 +83,9 @@ img {
 	font-size: 3em;
 }
 
+/*SPA Styling*/
 .hidden {
 	display: none;
-}
-
-.message,
-.message-container{
-    margin-bottom: 1px;
-}
-
-.message{
-    font-size: 1.5em;
 }
 
 
