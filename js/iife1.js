@@ -20,18 +20,9 @@ var Chatty = (function(chatapp){
 
     chatapp.xhrfunction = function (){
         var loadMessages = new XMLHttpRequest();
-        // var loadMessages2 = new XMLHttpRequest();
-        // var loadMessages3 = new XMLHttpRequest();
-        // var loadMessages4 = new XMLHttpRequest();
-        // var loadMessages5 = new XMLHttpRequest();
         loadMessages.open("GET", "https://kachatstrophe.firebaseio.com/messages.json");
-        // loadMessages2.open("GET", "json/startMessages2.JSON");
-        // loadMessages3.open("GET", "json/startMessages3.JSON");
-        // loadMessages4.open("GET", "json/startMessages4.JSON");
-        // loadMessages5.open("GET", "json/startMessages5.JSON");
         loadMessages.send();
         loadMessages.addEventListener("load", function(event){
-            // loadMessages2.send();
             console.log("the data has loaded!");
 
             var data = JSON.parse(event.target.responseText);
@@ -49,25 +40,6 @@ var Chatty = (function(chatapp){
             Chatty.optionsView();
             Chatty.chatView();
         });
-        // loadMessages2.addEventListener("load", function(event) {
-        //     loadMessages3.send();
-        //     newJSON2 = JSON.parse(event.target.responseText).messages;
-        //     pushData(newJSON2);
-        // });
-        // loadMessages3.addEventListener("load", function(event) {
-        //     loadMessages4.send();
-        //     newJSON3 = JSON.parse(event.target.responseText).messages;
-        //     pushData(newJSON3);
-        // });
-        // loadMessages4.addEventListener("load", function(event) {
-        //     loadMessages5.send();
-        //     newJSON4 = JSON.parse(event.target.responseText).messages;
-        //     pushData(newJSON4);
-        // });
-        // loadMessages5.addEventListener("load", function(event) {
-        //     newJSON5 = JSON.parse(event.target.responseText).messages;
-        //     pushData(newJSON5);
-        // });
 
     }
 
@@ -90,6 +62,21 @@ var Chatty = (function(chatapp){
         datesArray.push(Chatty.setDate())
         chatapp.messageLimit();
 
+
+            var newObject = {
+                "date": Chatty.setDate(),
+                "text": message,
+                "user": user
+                }
+
+            $.ajax({
+                url: "https://kachatstrophe.firebaseio.com/messages.json",
+                method: "POST",
+                data: JSON.stringify(newObject)
+            })
+            .done(function(response) {
+                console.log("response from Firebase:", response);
+            })
     }
 
 
