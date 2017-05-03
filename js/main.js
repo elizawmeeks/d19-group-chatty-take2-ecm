@@ -1,7 +1,5 @@
-// Initialize Firebase
-
 var config = {
-    apiKey: "AIzaSyB06_2wSIRanpudSgeDEEFlJkOmXunD58E",
+    apiKey: "json/firebase-key.json",
     authDomain: "kachatstrophe.firebaseapp.com",
     databaseURL: "https://kachatstrophe.firebaseio.com",
     projectId: "kachatstrophe",

@@ -25,11 +25,11 @@ var Chatty = (function(chatapp){
         var loadMessages3 = new XMLHttpRequest();
         var loadMessages4 = new XMLHttpRequest();
         var loadMessages5 = new XMLHttpRequest();
-        loadMessages.open("GET", "startMessages.JSON");
-        loadMessages2.open("GET", "startMessages2.JSON");
-        loadMessages3.open("GET", "startMessages3.JSON");
-        loadMessages4.open("GET", "startMessages4.JSON");
-        loadMessages5.open("GET", "startMessages5.JSON");
+        loadMessages.open("GET", ref);
+        loadMessages2.open("GET", "json/startMessages2.JSON");
+        loadMessages3.open("GET", "json/startMessages3.JSON");
+        loadMessages4.open("GET", "json/startMessages4.JSON");
+        loadMessages5.open("GET", "json/startMessages5.JSON");
         loadMessages.send();
         loadMessages.addEventListener("load", function(event){
             loadMessages2.send();
