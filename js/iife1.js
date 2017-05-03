@@ -3,11 +3,6 @@ console.log("iife1");
 
 var Chatty = (function(chatapp){
     var messagesArray = [];
-    var newJSON = [];
-    var newJSON2 = [];
-    var newJSON3 = [];
-    var newJSON4 = [];
-    var newJSON5 = [];
     var datesArray = [];
     var usersArray = [];
     var pushData = function(JSONarray) {
@@ -17,6 +12,11 @@ var Chatty = (function(chatapp){
             usersArray.push(JSONarray[i].user);
         }
     }
+    // var newJSON = [];
+    // var newJSON2 = [];
+    // var newJSON3 = [];
+    // var newJSON4 = [];
+    // var newJSON5 = [];
 
     chatapp.xhrfunction = function (){
         var loadMessages = new XMLHttpRequest();
