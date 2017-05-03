@@ -3,11 +3,6 @@ console.log("iife1");
 
 var Chatty = (function(chatapp){
     var messagesArray = [];
-    var newJSON = [];
-    var newJSON2 = [];
-    var newJSON3 = [];
-    var newJSON4 = [];
-    var newJSON5 = [];
     var datesArray = [];
     var usersArray = [];
     var pushData = function(JSONarray) {
@@ -27,12 +22,20 @@ var Chatty = (function(chatapp){
 
             var data = JSON.parse(event.target.responseText);
             pushData(data);
+            var dataArray = [];
 
-            console.log("data", data);
-            console.log("message", data[0].text);
-            console.log("date", data[0].date);
-            console.log("user", data[0].user);
-            // pushData(newJSON);
+            if(typeof data === "object"){
+                console.log("data typeof", data)
+                for(message in data){
+                    dataArray.push(data[message]);
+                }
+            }
+            pushData(dataArray);
+
+            // console.log("data", data);
+            // console.log("message", data[0].text);
+            // console.log("date", data[0].date);
+            // console.log("user", data[0].user);
 
             Chatty.enterKeyPress();
             Chatty.writeToDom()
@@ -64,10 +67,10 @@ var Chatty = (function(chatapp){
 
 
             var newObject = {
-                "date": Chatty.setDate(),
-                "text": message,
-                "user": user
-                }
+                    "date": Chatty.setDate(),
+                    "text": message,
+                    "user": user
+                    }
 
             $.ajax({
                 url: "https://kachatstrophe.firebaseio.com/messages.json",
