@@ -60,7 +60,6 @@ var Chatty = (function(chatapp){
             Chatty.defaultListeners();
             Chatty.optionsView();
             Chatty.chatView();
-            Chatty.scrollBottom();
         });
 
     }
