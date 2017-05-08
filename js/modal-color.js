@@ -3,8 +3,8 @@ console.log("COLOR SELECT RICKK!!!!!");
 
 var Chatty = (function(chatapp){
 
-    var userBackground = document.getElementById("background-select");
-    var userText = document.getElementById("text-select");
+    var userBackground = $("#background-select")[0];
+    var userText = $("#text-select")[0];
 
 
     chatapp.setUserColor = function(){

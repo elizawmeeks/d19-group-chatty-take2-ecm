@@ -1,6 +1,6 @@
 var Chatty = (function(chatapp){
-	var write = document.getElementById("write");
-	var clearLogButton = document.getElementById('clear-log');
+	var write = $("#write")[0];
+	var clearLogButton = $('#clear-log')[0];
 
 	chatapp.writeToDom = function(){
 		var messages = Chatty.getMessages();
@@ -51,7 +51,7 @@ var Chatty = (function(chatapp){
 	}
 
 	chatapp.scrollBottom = function(){
-		var chatLog = document.getElementById("chat-log");
+		var chatLog = $("#chat-log")[0];
 		// console.log("chatLog", chatLog);
 		chatLog.scrollTop = chatLog.scrollHeight;
 	}

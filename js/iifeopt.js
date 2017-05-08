@@ -2,11 +2,11 @@
 console.log("iifeopt");
 var Chatty = (function (oldChatty) {
     // GATHERING EVENT LISTENERS
-    var newMessage = document.getElementById('message-input');
-    var themeSelect = document.getElementById('theme-select');
-    var textSizeSelect = document.getElementById('text-size-select');
-    var clearLogButton = document.getElementById('clear-log');
-    var userSelect = document.getElementById('user-select');
+    var newMessage = $('#message-input')[0];
+    var themeSelect = $('#theme-select')[0];
+    var textSizeSelect = $('#text-size-select')[0];
+    var clearLogButton = $('#clear-log')[0];
+    var userSelect = $('#user-select')[0];
     // NAV CLEAR FUNCTION
     oldChatty.navClear = function () {
         // GETTING MESSAGEARRAY LENGTH
@@ -28,21 +28,29 @@ var Chatty = (function (oldChatty) {
 
     // ENTER KYPRESS FUNCTION
     oldChatty.enterKeyPress = function () {
-        newMessage.addEventListener("keypress", function(event) {
-            var user = userSelect.value;
+        var user = $("#user-select")[0].value;
+        // console.log("user", user);
+        $("#message-input").keypress(function() {
+            console.log("event", event);
             if (event.keyCode === 13) {
                 Chatty.addMessages(newMessage.value, user);
                 Chatty.writeToDom();
                 newMessage.value = null;
             }
-
-
-        });
+    });
+        // newMessage.addEventListener("keypress", function(event) {
+        //     var user = userSelect.value;
+        //     if (event.keyCode === 13) {
+        //         Chatty.addMessages(newMessage.value, user);
+        //         Chatty.writeToDom();
+        //         newMessage.value = null;
+        //     }
+        // });
     }
 
     // SELECT THEME FUNCTION
     oldChatty.selectTheme = function () {
-        var themesSelect = document.getElementById("theme-select");
+        var themesSelect = $("#theme-select")[0];
         switch (themesSelect.value){
             case "1":
                 document.body.classList.remove("darkTheme");
@@ -57,7 +65,7 @@ var Chatty = (function (oldChatty) {
 
     // Select Text Size Function
     oldChatty.selectTextSize = function () {
-        var textSizeSelect = document.getElementById("text-size-select");
+        var textSizeSelect = $("#text-size-select")[0];
         var write = document.getElementById("write");
         switch (textSizeSelect.value){
             case "a":
@@ -74,10 +82,10 @@ var Chatty = (function (oldChatty) {
 
     // DELETE MESSAGE BUTTON Event Listener
     oldChatty.deleteButton = function () {
-        var messageDeleteButtons = document.getElementsByClassName('delete');
+        var messageDeleteButtons = $('.delete');
         for (var i = 0; i < messageDeleteButtons.length; i++) {
 
-            messageDeleteButtons.item(i).addEventListener("click", function(event) {
+            messageDeleteButtons[i].addEventListener("click", function(event) {
                 var deleteMessage = event.target.closest(".row").querySelector(".message").innerHTML;
                 var deleteDate = event.target.closest(".row").querySelector(".date").innerHTML;
                 var deleteUser = event.target.closest(".row").querySelector(".user").innerHTML;
@@ -90,9 +98,9 @@ var Chatty = (function (oldChatty) {
 
     // EDIT BUTTON EVENT LISTENER
     oldChatty.editButton = function() {
-        var editMessage = document.getElementsByClassName("edit");
+        var editMessage = $(".edit");
         for (var i = 0; i < editMessage.length; i++){
-            editMessage.item(i).addEventListener("click", function(){
+            editMessage[i].addEventListener("click", function(){
                 var originalMessage = event.target.closest(".row").querySelector(".message").innerHTML;
                 var inputBox = document.getElementById("message-input");
                 var editButton = document.getElementById("edit-btn");
@@ -110,26 +118,18 @@ var Chatty = (function (oldChatty) {
 
     // Default Event Listeners
     oldChatty.defaultListeners = function () {
-        var themesBtn = document.getElementById('btn-selectTheme');
-        var textBtn = document.getElementById("btn-selectText");
-        var clearLogButton = document.getElementById('clear-log');
-        var colorBtn = document.getElementById("color-btn");
-
-
-        colorBtn.addEventListener("click", Chatty.setUserColor);
-        themesBtn.addEventListener("click", Chatty.selectTheme);
-        textBtn.addEventListener("click", Chatty.selectTextSize);
-        clearLogButton.addEventListener("click", Chatty.navClear);
+        $("#color-btn").click(Chatty.setUserColor);
+        $('#btn-selectTheme').click(Chatty.selectTheme);
+        $("#btn-selectText").click(Chatty.selectTextSize);
+        $('#clear-log').click(Chatty.navClear);
     }
 
     oldChatty.optionsView = function (){
-        var optionsClick = document.getElementById("optionsClick");
-        var footerInput = document.getElementById("footerInput");
-        var footer = document.getElementById("footer");
-        optionsClick.addEventListener("click", function(){
-            var optionsView = document.getElementById("optionsView");
-            var chatView = document.getElementById("chatLogView");
-            // console.log("options view clicked");
+        var footerInput = $("#footerInput")[0];
+        var footer = $("#footer")[0];
+        $("#optionsClick").click(function(){
+            var optionsView = $("#optionsView")[0];
+            var chatView = $("#chatLogView")[0];
             optionsView.classList.remove("hidden");
             chatView.classList.add("hidden");
             footerInput.classList.add("hidden");
@@ -138,15 +138,15 @@ var Chatty = (function (oldChatty) {
     }
 
     oldChatty.chatView = function (){
-        var chatLogClick = document.getElementById("chatLogClick");
-        var footerInput = document.getElementById("footerInput");
+        var chatLogClick = $("#chatLogClick")[0];
+        var footerInput = $("#footerInput")[0];
         chatLogClick.addEventListener("click", oldChatty.chatViewInnerEL);
     }
 
     oldChatty.chatViewInnerEL = function (){
-        var optionsView = document.getElementById("optionsView");
-        var chatView = document.getElementById("chatLogView");
-        var footer = document.getElementById("footer");
+        var optionsView = $("#optionsView")[0];
+        var chatView = $("#chatLogView")[0];
+        var footer = $("#footer")[0];
         // console.log("chat view clicked");
         optionsView.classList.add("hidden");
         chatView.classList.remove("hidden");
