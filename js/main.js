@@ -21,5 +21,5 @@ $(document).ready(function(){
 console.log("main.js loaded");
 
 
-Chatty.xhrfunction();
+Chatty.ajax();
 
